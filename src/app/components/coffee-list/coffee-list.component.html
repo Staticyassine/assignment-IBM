@@ -9,8 +9,9 @@
             <!-- <a (click)="showDetails(coffee)">
                 {{coffee.blend_name}}
             </a> -->
-            <card *ngFor="let coffee of coffeesUnderPagiantion" [detailData]="coffee"
-                (showDetail)="showDetails($event)"></card>
+            <card *ngFor="let coffee of coffeesUnderPagiantion; let i = index;" (click)="setRowToHighlight(i)"
+                [detailData]="coffee" (showDetail)="showDetails($event)" [ngClass]="{'highlight': selectedIndex === i}">
+            </card>
         </div>
         <div class="pagination">
             <p-paginator [rows]="10" [totalRecords]="50" (onPageChange)="paginate($event)"></p-paginator>

@@ -34,11 +34,15 @@ export class CoffeeListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-  selectedcoffee?: Coffee
+
   showDetails(coffee: Coffee) {
     this.store.dispatch(new SetSelectedCoffee(coffee))
     this.router.navigate(['/details/' + coffee.id])
-    this.selectedcoffee = coffee
+  }
+
+  selectedIndex?= -1
+  setRowToHighlight(_index: number) {
+    this.selectedIndex = _index;
   }
 
   paginate(event: any) {
