@@ -1,0 +1,48 @@
+.container
+    display: flex
+    .list-container
+        width: 453px
+        height:100vh
+        padding-bottom: 20px
+        margin: 0 auto
+        border-right: 0.5px solid #D2D2D2
+        border-left: 0.5px solid #D2D2D2
+        display: flex
+        justify-content: stretch
+        flex-direction: column
+        .loader
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 40px
+            img
+                animation: loading 1s linear infinite
+        .card-list
+            overflow-y: scroll
+            height: 100%
+    .detail-container   
+        flex: 1
+        .assi-title
+            display: flex
+            justify-content: center
+     
+
+@keyframes loading 
+    0%
+        transform: rotate(0deg) 
+    100%
+        transform: rotate(-360deg) 
+
+    
+.card-list::-webkit-scrollbar 
+  width: 5px
+  height: 8px
+  background-color: #red 
+
+.card-list::-webkit-scrollbar-thumb 
+    background: #cfcfcf
+    border-radius: 100vh
+
+.highlight
+    background-color: green
+

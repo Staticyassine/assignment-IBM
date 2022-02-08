@@ -1,0 +1,25 @@
+<div class="card" (click)="onShowDetail()">
+    <div class="card__start">
+        <button>
+            <img src="../../../assets/icons/PushPin.svg" alt="">
+        </button>
+        <div class="card__title">
+
+            <div class="card__top">
+                <h1>
+                    {{detailData.blend_name}}
+                </h1>
+                <span>
+                    {{detailData.variety}}
+                </span>
+            </div>
+            <p>
+                {{detailData.origin}}
+            </p>
+        </div>
+
+    </div>
+    <span class="arrow" (click)="onShowDetail()">
+        <img src="../../../assets/icons/CaretRight.svg" alt="">
+    </span>
+</div>

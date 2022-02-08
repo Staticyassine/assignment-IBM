@@ -1,5 +1,5 @@
 {
-  "name": "ibm-assignment",
+  "name": "ibm-assignment-yassine-hmaidouch",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.0.3",
+    "@angular/cdk": "^8.0.0",
     "@angular/common": "~12.0.3",
     "@angular/compiler": "~12.0.3",
     "@angular/core": "~12.0.3",
@@ -18,7 +19,13 @@
     "@angular/platform-browser": "~12.0.3",
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
-    "rxjs": "~6.6.0",
+    "@ngrx/effects": "^13.0.2",
+    "@ngrx/schematics": "^13.0.2",
+    "@ngrx/store": "^13.0.2",
+    "@ngrx/store-devtools": "^13.0.2",
+    "primeicons": "^5.0.0",
+    "primeng": "^13.1.0",
+    "rxjs": "^6.6.7",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

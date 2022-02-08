@@ -1,0 +1,52 @@
+.card
+    border-bottom: 0.5px solid #D2D2D2
+    padding: 16px 20px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    cursor: pointer
+
+    &:hover
+        background-color: #F8F8F8
+        .arrow
+            transform: translateX(10px) 
+    &__start
+        display: flex
+        align-items: center
+        gap: 10px
+        button
+            border: 0px
+            border-radius: 100vh
+            padding: 10px   
+            cursor: pointer 
+        p 
+            font-weight: 500
+            font-size: 12px
+            color: #7D7D7D
+    &__top
+        display: flex
+        gap: 10px
+        align-items: center
+        span
+            display: flex
+            align-items: center
+            text-transform: capitalize
+            color: #74601D
+            background-color : #F7E6AD
+            padding: 2px 10px
+            border-radius: 7px
+            font-weight: 500
+            font-size: 12px
+
+
+    &__title
+        display: flex
+        flex-direction: column
+        gap: 10px 
+        h1
+            font-weight: 600
+            font-size: 16px
+        
+    
+    .arrow
+        transition: all ease .3s

@@ -1,0 +1,35 @@
+<div class="details-top">
+    <button (click)="close()">
+        <img src="../../../assets/icons/X.svg" alt="">
+        Close
+    </button>
+</div>
+
+<div class="details">
+    <div class="details__start">
+        <div class="details__title">
+            <div class="details__top">
+                <h1>
+                    {{selectedCoffee.blend_name}} </h1>
+                <span>
+                    {{selectedCoffee.intensifier}}
+                </span>
+            </div>
+            <p>
+                {{selectedCoffee.origin}}
+
+            </p>
+        </div>
+        <button>
+            <img src="../../../assets/icons/PushPin.svg" alt="">
+        </button>
+
+    </div>
+    <div>
+        <p>
+            {{selectedCoffee.notes}}
+
+        </p>
+
+    </div>
+</div>

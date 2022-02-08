@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="list-container">
+        <div class="loader" *ngIf="loading | async">
+            <img src="../../../assets/icons/Ellipse.png" alt="Loading icon">
+
+        </div>
+
+        <div class="card-list">
+            <!-- <a (click)="showDetails(coffee)">
+                {{coffee.blend_name}}
+            </a> -->
+            <card *ngFor="let coffee of coffeesUnderPagiantion" [detailData]="coffee"
+                (showDetail)="showDetails($event)"></card>
+        </div>
+        <div class="pagination">
+            <p-paginator [rows]="10" [totalRecords]="50" (onPageChange)="paginate($event)"></p-paginator>
+        </div>
+    </div>
+    <div class="detail-container">
+        <div class="assi-title">
+            This assignment done by Yassine HMAIDOUCH
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
