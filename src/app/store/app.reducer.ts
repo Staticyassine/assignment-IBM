@@ -32,8 +32,12 @@ export function CoffeeReducer(
         case CoffeeActions.SET_SELECTED_COFFEE:
             return {
                 ...state,
-                loading: false,
                 selectedCoffee: (action as CustomAction).payload
+            };
+        case CoffeeActions.CLOSE_DETAIL:
+            return {
+                ...state,
+                selectedCoffee: null
             };
         default:
             return { ...state };

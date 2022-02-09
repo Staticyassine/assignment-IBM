@@ -1,7 +1,8 @@
-<div class="card" (click)="onShowDetail()">
+<div class="card" (click)="onShowDetail($event)">
     <div class="card__start">
-        <button>
-            <img src="../../../assets/icons/PushPin.svg" alt="">
+        <button class="pin-button" (click)="onPinCard()"
+            [ngStyle]="{'background-color': detailData.pined ? 'black' : '' }">
+            <img [src]="detailData.pined ? unPinIcon : pinIcon" alt="">
         </button>
         <div class="card__title">
 
@@ -19,7 +20,7 @@
         </div>
 
     </div>
-    <span class="arrow" (click)="onShowDetail()">
+    <span *ngIf="!arrowShowing" class="arrow">
         <img src="../../../assets/icons/CaretRight.svg" alt="">
     </span>
 </div>

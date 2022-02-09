@@ -2,16 +2,16 @@ import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { CoffeeState } from "./app.store";
 
 
-let coffeeSelector = createFeatureSelector<CoffeeState>('coffees');
-export let CoffeesListSelector = createSelector(
+const coffeeSelector = createFeatureSelector<CoffeeState>('coffees');
+export const coffeesListSelector = createSelector(
     coffeeSelector,
     (state) => state.coffeeList
 );
-export let GetSelectedCoffeeSelector = createSelector(
+export const getSelectedCoffeeSelector = createSelector(
     coffeeSelector,
     (state) => state.selectedCoffee
 );
-export let LoadingSelector = createSelector(
+export const loadingSelector = createSelector(
     coffeeSelector,
     (state) => state.loading
 );

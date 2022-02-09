@@ -10,26 +10,21 @@
         <div class="details__title">
             <div class="details__top">
                 <h1>
-                    {{selectedCoffee.blend_name}} </h1>
+                    {{selectedCoffee?.blend_name}} </h1>
                 <span>
-                    {{selectedCoffee.intensifier}}
+                    {{selectedCoffee?.intensifier}}
                 </span>
             </div>
             <p>
-                {{selectedCoffee.origin}}
+                {{selectedCoffee?.origin}}
 
             </p>
         </div>
-        <button>
-            <img src="../../../assets/icons/PushPin.svg" alt="">
-        </button>
-
     </div>
     <div>
         <p>
-            {{selectedCoffee.notes}}
+            {{selectedCoffee?.notes}}
 
         </p>
-
     </div>
 </div>

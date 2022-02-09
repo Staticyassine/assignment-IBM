@@ -17,8 +17,8 @@ export class CoffeeEffects {
             ofType(CoffeeActions.LOAD_COFFEE),
             switchMap((actionData: any) =>
                 this.coffeeService.getCoffee(actionData.payload).pipe(
-                    map((data) => new LoadCoffeeSuccess(data)),
-                    catchError((err) => of(new LoadCoffeeFailed(err)))
+                    map((data) => LoadCoffeeSuccess(data)),
+                    catchError((err) => of(LoadCoffeeFailed(err)))
                 )
             )
         )

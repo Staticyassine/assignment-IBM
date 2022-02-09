@@ -8,7 +8,7 @@ export interface CoffeeState {
     loading: Boolean
 }
 
-export let initialState = {
+export const initialState = {
     coffeeList: [],
     selectedCoffee: null,
     loading: false

@@ -1,26 +1,58 @@
-<div class="container">
-    <div class="list-container">
-        <div class="loader" *ngIf="loading | async">
-            <img src="../../../assets/icons/Ellipse.png" alt="Loading icon">
+<div class="global-container">
+    <div class="container">
+        <div class="list-container">
 
+            <div class="search-container">
+                <label for="search" class="input">
+                    <img src="../../../assets/icons/MagnifyingGlass.svg" alt="">
+                    <input id="search" class="search-input" type="text" placeholder="Search" (input)="onSearch()"
+                        [(ngModel)]="searchText">
+                </label>
+            </div>
+            <div class="loader" *ngIf="loading$ | async">
+                <img src="../../../assets/icons/Ellipse.png" alt="Loading icon">
+            </div>
+            <div class="empty-search" *ngIf="!coffeesUnderPagiantion.length && !(loading$ | async)">
+                <img src="../../../assets/icons/search-empty.svg" alt="empty search">
+            </div>
+            <div class=" card-list">
+                <!-- <a (click)="showDetails(coffee)">
+                    {{coffee.blend_name}}
+                </a> -->
+                <card *ngFor="let coffee of coffeesUnderPagiantion ; let i = index;" (click)="setRowToHighlight(i)"
+                    [detailData]="coffee" (showDetail)="showDetails($event)" (pinCard)="pinCard($event)"
+                    [ngClass]="{'highlight': selectedIndex === i}">
+                </card>
+            </div>
+            <div class="pagination">
+                <p-paginator [rows]="10" [totalRecords]="searchedCoffees.length" (onPageChange)="paginate($event)">
+                </p-paginator>
+            </div>
+        </div>
+        <div class="detail-container">
+            <div class="empty" *ngIf="!(selectedCoffee$ | async)">
+                <img src="../../../assets/icons/hot-coffee.png" alt="">
+                <p>
+                    Select a Coffee from the list
+                </p>
+            </div>
+            <router-outlet></router-outlet>
         </div>
 
-        <div class="card-list">
-            <!-- <a (click)="showDetails(coffee)">
-                {{coffee.blend_name}}
-            </a> -->
-            <card *ngFor="let coffee of coffeesUnderPagiantion; let i = index;" (click)="setRowToHighlight(i)"
-                [detailData]="coffee" (showDetail)="showDetails($event)" [ngClass]="{'highlight': selectedIndex === i}">
-            </card>
-        </div>
-        <div class="pagination">
-            <p-paginator [rows]="10" [totalRecords]="50" (onPageChange)="paginate($event)"></p-paginator>
+        <div class="list-container list-pin">
+            <div class="loader" *ngIf="loading$ | async">
+                <img src="../../../assets/icons/Ellipse.png" alt="Loading icon">
+            </div>
+            <div class=" card-list">
+                <card *ngFor="let pinnedCoffee of pinedCoffees; let i = index;" (click)="setRowToHighlight(i)"
+                    [detailData]="pinnedCoffee" (showDetail)="showDetails($event)" (pinCard)="pinCard($event)"
+                    [ngClass]="{'highlight': selectedIndex === i}" arrowShowing="false">
+                </card>
+            </div>
         </div>
     </div>
-    <div class="detail-container">
-        <div class="assi-title">
-            This assignment done by Yassine HMAIDOUCH
-        </div>
-        <router-outlet></router-outlet>
-    </div>
+    <a class="assi-title" href="https://github.com/Staticyassine/assignment-IBM" target="blank">
+        This assignment done by Yassine HMAIDOUCH :
+        <img class="github" src="../../../assets/icons/github-icon-1.svg" alt="Github">
+    </a>
 </div>

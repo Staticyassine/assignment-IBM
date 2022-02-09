@@ -6,4 +6,5 @@ export interface Coffee {
     variety?: String,
     notes?: String,
     intensifier?: String
+    pined: boolean
 }

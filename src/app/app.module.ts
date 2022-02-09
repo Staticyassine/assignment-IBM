@@ -19,7 +19,7 @@ import { DetailCardComponent } from './components/detail-card/detail-card.compon
     AppComponent,
     CoffeeListComponent,
     CoffeeDetailsComponent,
-    DetailCardComponent
+    DetailCardComponent,
   ],
   imports: [
     BrowserModule,
