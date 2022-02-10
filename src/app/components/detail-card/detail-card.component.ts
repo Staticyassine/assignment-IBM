@@ -26,8 +26,6 @@ export class DetailCardComponent implements OnInit {
   }
 
   onPinCard() {
-    // if (!this.detailData.pined) this.detailData = { ...this.detailData, pined: true }
-    // else this.detailData.pined = false
     this.detailData = { ...this.detailData, pined: !this.detailData.pined }
     this.pinCard.emit(this.detailData)
   }

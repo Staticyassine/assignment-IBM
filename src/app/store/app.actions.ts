@@ -9,52 +9,21 @@ export enum CoffeeActions {
     CLOSE_DETAIL = '[coffee-detail] close coffee detail',
 }
 
-// export class LoadCoffee {
-//     type: string = CoffeeActions.LOAD_COFFEE;
-//     payload: any;
-//     constructor(payload: any) {
-//         this.payload = payload;
-//     }
-// }
-
 export const LoadCoffee = createAction(
     CoffeeActions.LOAD_COFFEE,
     (payload: number) => ({ payload }),
 );
-
-// export class LoadCoffeeSuccess {
-//     type: string = CoffeeActions.LOAD_COFFEE_SUCCESS;
-//     payload: any;
-//     constructor(payload: any) {
-//         this.payload = payload;
-//     }
-// }
 
 export const LoadCoffeeSuccess = createAction(
     CoffeeActions.LOAD_COFFEE_SUCCESS,
     (payload: any) => ({ payload }),
 );
 
-// export class LoadCoffeeFailed {
-//     type: string = CoffeeActions.LOAD_COFFEE_FAILED;
-//     payload: any;
-//     constructor(payload: any) {
-//         this.payload = payload;
-//     }
-// }
-
 export const LoadCoffeeFailed = createAction(
     CoffeeActions.LOAD_COFFEE_FAILED,
     (payload: any) => ({ payload }),
 );
 
-// export class SetSelectedCoffee {
-//     type: string = CoffeeActions.SET_SELECTED_COFFEE;
-//     payload: any;
-//     constructor(payload: any) {
-//         this.payload = payload;
-//     }
-// }
 export const SetSelectedCoffee = createAction(
     CoffeeActions.SET_SELECTED_COFFEE,
     (payload: Coffee) => ({ payload }),

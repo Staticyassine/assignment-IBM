@@ -5,7 +5,6 @@
             <img [src]="detailData.pined ? unPinIcon : pinIcon" alt="">
         </button>
         <div class="card__title">
-
             <div class="card__top">
                 <h1>
                     {{detailData.blend_name}}
@@ -18,7 +17,6 @@
                 {{detailData.origin}}
             </p>
         </div>
-
     </div>
     <span *ngIf="!arrowShowing" class="arrow">
         <img src="../../../assets/icons/CaretRight.svg" alt="">
